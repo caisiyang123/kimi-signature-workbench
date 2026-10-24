@@ -1,0 +1,5 @@
+- insert:
+    - id: kimi-signature-workbench
+      name: dsh-kimi-signature-workbench
+      config:
+        root: !!js dshHomePath('kimi-signature-workbench')

@@ -1,0 +1,42 @@
+{
+  "name": "dsh-kimi-signature-workbench",
+  "version": "2.2.1",
+  "type": "module",
+  "private": true,
+  "description": "核验第三方大模型端点是否真的把请求交给 Kimi 官方 API、且没有偷换模型；用请求签名回源校验并产出可读报告。",
+  "author": "caisiyang123",
+  "license": "MIT",
+  "main": "dsh/index.js",
+  "exports": {
+    ".": "./dsh/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "dsh-desktop-workbenches"
+      ],
+      "external": []
+    }
+  },
+  "files": [
+    "dsh",
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caisiyang123/kimi-signature-workbench.git"
+  }
+}
